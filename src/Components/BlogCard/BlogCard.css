@@ -1,0 +1,29 @@
+.blog-card {
+    font-size: 100%;
+    height: 80%;
+    width: 30%;
+    border:0.2vh solid #35D0DA;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.blogPostImage {
+    flex-shrink: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.PostHeader {
+    font-size: 1em;
+    flex-grow: 1;
+    height: 5%;
+    width: 100%;
+}
+
+.BlogReactions {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+}

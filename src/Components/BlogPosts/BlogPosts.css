@@ -1,0 +1,19 @@
+.blogPosts {
+    /* height: 100%;
+    width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PostContainer {
+    /* height: 70%; */
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+

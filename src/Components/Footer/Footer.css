@@ -1,0 +1,12 @@
+.page-footer {
+    height: 10vh;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.copyright {
+    margin: 0vh 0vw 0vh 10vw;
+}

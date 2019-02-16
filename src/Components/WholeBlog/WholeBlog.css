@@ -1,0 +1,24 @@
+.WholeBlog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 100vh; */
+}
+
+/* .blog-header { */
+    /* background-color: black; */
+    /* flex-grow: 0; */
+    /* width: 100%; */
+    /* color: white; */
+    /* align-self: flex-start;
+} */
+
+.BlogPosts {
+    flex-grow: 0;
+    align-self: center;
+}
+
+.Footer {
+flex-grow: 0;
+align-self: flex-end;
+}
