@@ -9,6 +9,7 @@ class Form extends Component {
     state = {
         BlogTitle: "",
         BlogDescription: "",
+        ReadingTime: 0,
     };
     fileInput = React.createRef();
     handleBlogEntry = (event)=>{
@@ -17,13 +18,25 @@ class Form extends Component {
         });
     };
     handleSubmit = async (event)=>{
-        event.preventDefault();
-        if(this.fileInput.current){
-            console.log(this.fileInput.current.files[0]);
-            }
+        const month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        const submissionDate = new Date();
         const form = new FormData();
+        let date = submissionDate.getDate();
+        if(date[date.length-1]==='1'){
+            date+='st ';
+        }else if(date[date.length-1]==='2'){
+            date+='nd ';
+        }else if(date[date.length-1]==='3'){
+            date+='rd ';
+        }else{
+            date+='th ';
+        }
+        date+=month[submissionDate.getMonth()]+', ';
+        date+=submissionDate.getFullYear();
         form.append('title',this.state.BlogTitle);
         form.append('description',this.state.BlogDescription);
+        form.append('date',date);
+        form.append('timeToRead',this.state.ReadingTime);        
         console.log(form);
         await Axios.post('http://localhost:3005/',form).then((err)=>console.log(err)).catch((err)=>{console.log(err)});
     }
@@ -41,6 +54,10 @@ class Form extends Component {
                 <div className="blog-input">
                     Blog Description:
                                 <textarea className="description" type="text" name="BlogDescription" placeholder="Enter description"  onChange={this.handleBlogEntry}/>
+                </div>
+                <div>
+                    Time to Read:
+                    <input type='number' name='ReadingTime' min='0' max='10' onChange={this.handleBlogEntry}/>
                 </div>
                 <div className="blog-submit">
                 <Link to={'/'}>

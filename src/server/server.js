@@ -15,15 +15,17 @@ server.route({
             payload: {
                 title: Joi.string().required(),
                 description: Joi.string().required(),
+                timeToRead: Joi.number().required(),
+                date: Joi.string().required(),
             }
         }
     },
     handler: (request,h)=>{
-        const { title, description} = request.payload;
+        const { title, description, timeToRead, date} = request.payload;
         let BlogJSONData = fs.readFileSync('../BlogPosts/index.js',{encoding: "ascii"});
-        let text = BlogJSONData.substring(BlogJSONData.length-2,);
-        let writeStream = fs.createWriteStream('../BlogPosts/index.js',{flags: 'r+', start: BlogJSONData.length-2, autoClose: true});
-        writeStream.write(`{title: '${title}', description: '${description}'},${text}`);
+        let text = BlogJSONData.substring(BlogJSONData.length-1,);
+        let writeStream = fs.createWriteStream('../BlogPosts/index.js',{flags: 'r+', start: BlogJSONData.length-1, autoClose: true});
+        writeStream.write(`{title: '${title}', description: '${description}', timeToRead: '${timeToRead} mins', date: '${date}', claps: 0, like: 0, toggle: false},${text}`);
         writeStream.end();
         return BlogJSONData;
     }

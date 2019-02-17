@@ -9,11 +9,16 @@
 
 .PostContainer {
     /* height: 70%; */
-    width: 80%;
+    width: 45%;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
+/* .submit {
+    margin: 20px;
+} */
 

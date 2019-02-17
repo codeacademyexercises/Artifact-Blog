@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import BlogReactions from '../BlogReactions/BlogReactions.js';
+import BlogReactions from '../../containers/BlogReactions';
 import './BlogCard.css';
+// import { threadId } from 'worker_threads';
 
 class BlogCard extends Component {
     render(){
@@ -9,13 +10,22 @@ class BlogCard extends Component {
                 <div>
                     <img className='blogPostImage' alt='' src={require('../../Images/abstract.png')} />
                 </div>
+                <div className="time">
+                    <div>
+                        {this.props.date}
+                    </div>
+                    <div id='timeToRead'>
+                        {this.props.timeToRead}
+                    </div>
+                </div>
                 <div className="PostHeader">
                     <h3>{this.props.title}</h3>
-                </div>
-                <div className="PostHeader">
+                {/* </div>
+                <div className="PostHeader"> */}
                     <p>{this.props.description}</p>
                 </div>
-                <BlogReactions className="BlogReactions"/>
+                <hr/>
+                <BlogReactions className="BlogReactions" index={this.props.index}/>
             </div>
         );
     };

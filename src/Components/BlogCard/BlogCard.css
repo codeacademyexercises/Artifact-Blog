@@ -1,7 +1,10 @@
 .blog-card {
-    font-size: 100%;
-    height: 80%;
-    width: 30%;
+    font-size: 1em;
+    height: 420px;
+    width: 240px;
+    margin: 10px 0px 10px 0px;
+    /* max-width: 200px;
+    max-height: 400px; */
     border:0.2vh solid #35D0DA;
     display: flex;
     flex-direction: column;
@@ -16,6 +19,7 @@
 }
 
 .PostHeader {
+    margin: 0px 5px 0px 5px;
     font-size: 1em;
     flex-grow: 1;
     height: 5%;
@@ -26,4 +30,28 @@
     flex-grow: 1;
     height: 100%;
     width: 100%;
+    align-self: flex-end;
 }
+
+hr {
+    /* noshade: noshade; */
+    size: 0.5px;
+    width: 90%;
+    margin: 0 auto 0 auto;
+}
+
+.time {
+    /* margin: 0px 5px 0px 5px; */
+    color: #989FAB;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.time div{
+    flex-shrink: 1;
+}
+
+/* .time #timeToRead{
+    align-self: flex-end;
+} */
